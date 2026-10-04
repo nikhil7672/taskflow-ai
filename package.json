@@ -1,0 +1,30 @@
+{
+  "name": "taskflow-ai",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@11.19.0",
+  "engines": {
+    "node": ">=22.9.0"
+  },
+  "scripts": {
+    "dev:web": "pnpm --filter @taskflow/web dev",
+    "dev:api": "pnpm --filter @taskflow/database build && pnpm --filter @taskflow/api dev",
+    "start:api": "pnpm --filter @taskflow/database build && pnpm --filter @taskflow/api start",
+    "build:api": "pnpm --filter @taskflow/database build && pnpm --filter @taskflow/api build",
+    "build:web": "pnpm --filter @taskflow/web build",
+    "typecheck": "pnpm -r typecheck",
+    "lint": "pnpm -r lint",
+    "test:api": "pnpm --filter @taskflow/database build && pnpm --filter @taskflow/api test",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "db:generate": "pnpm --filter @taskflow/database db:generate",
+    "db:migrate": "pnpm --filter @taskflow/database db:migrate",
+    "db:migrate:deploy": "pnpm --filter @taskflow/database db:migrate:deploy",
+    "db:migrate:status": "pnpm --filter @taskflow/database db:migrate:status",
+    "db:push": "pnpm --filter @taskflow/database db:push",
+    "db:studio": "pnpm --filter @taskflow/database db:studio"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2"
+  }
+}
