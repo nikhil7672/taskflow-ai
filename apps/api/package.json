@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "node --env-file-if-exists=../../.env --import tsx --watch src/server.ts",
-    "build": "tsc -p tsconfig.json",
+    "build": "pnpm --filter @taskflow/database db:generate && tsc -p tsconfig.json",
     "start": "node --env-file-if-exists=../../.env dist/server.js",
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "lint": "eslint src",
