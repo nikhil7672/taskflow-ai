@@ -3,11 +3,15 @@
   "services": {
     "api": {
       "root": "apps/api",
-      "framework": "express"
+      "framework": "express",
+      "installCommand": "cd ../.. && pnpm install --frozen-lockfile",
+      "buildCommand": "cd ../.. && pnpm --filter @taskflow/database build && pnpm --filter @taskflow/api build"
     },
     "web": {
       "root": "apps/web",
-      "framework": "nextjs"
+      "framework": "nextjs",
+      "installCommand": "cd ../.. && pnpm install --frozen-lockfile",
+      "buildCommand": "cd ../.. && pnpm --filter @taskflow/web build"
     }
   },
   "rewrites": [
